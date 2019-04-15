@@ -1,0 +1,45 @@
+﻿<common:BootStrapper x:Class="WindowsApp223.App"
+                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:common="using:Template10.Common"
+                     xmlns:controls="using:Template10.Controls"
+                     xmlns:converter="using:Template10.Conversters"
+                     xmlns:v="using:Windows223.Views" x:Name="ThisApp">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles\Custom.xaml" />
+
+                <converters:ValueWhenConverter x:key="BooleanToVisibilityConverter">
+                    <converters:ValueWhenConverter.When>
+                        <x:Boolean>True</x:Boolean>
+                    </converters:ValueWhenConverter.When>
+                    <converters:ValueWhenConverer.Value>
+                        <Visibility>Visible</Visibility>
+                    </converters:ValueWhenConverer.Value>
+                    <converters:ValueWhenConverter.Otherwise>
+                        <Visibility>Collapsed</Visibility>
+                    </converters:ValueWhenConverter.Otherwise>
+                </converters:ValueWhenConverter>
+
+                <converters:ValueWhenConverter x:key="ReverseBooleanToVisibilityConverter">
+                    <converters:ValueWhenConverter.When>
+                        <x:Boolean>False</x:Boolean>
+                    </converters:ValueWhenConverter.When>
+                    <converters:ValueWhenConverer.Value>
+                        <Visibility>Visible</Visibility>
+                    </converters:ValueWhenConverer.Value>
+                    <converters:ValueWhenConverter.Otherwise>
+                        <Visibility>Collapsed</Visibility>
+                    </converters:ValueWhenConverter.Otherwise>
+                </converters:ValueWhenConverter>
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--  custom resources  -->
+
+        </ResourceDictionary>
+    </Application.Resources>
+
+</common:BootStrapper>
